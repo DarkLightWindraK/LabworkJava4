@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        var list = PersonReader.read("src/foreign_names.csv");
+        System.out.println(list.size());
     }
 }
