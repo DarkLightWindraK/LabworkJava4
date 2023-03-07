@@ -1,9 +1,20 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.IllegalFormatException;
 import java.util.List;
 
+/**
+ * Класс для чтения списка людей из файла
+ */
 public class PersonReader {
+    /**
+     * Читает список людей из файла
+     * @param filePath путь к файлу
+     * @return список людей
+     * @throws IOException если чтение из файла не удалось
+     */
     public static List<Person> read(String filePath) {
         List<Person> list = new ArrayList<>();
 
@@ -21,7 +32,7 @@ public class PersonReader {
                 person.salary = Double.parseDouble(data[5]);
                 list.add(person);
             }
-        } catch (Exception e) {
+        } catch (IOException | NumberFormatException | IllegalFormatException e) {
             System.err.println("Ошибка при чтении файла");
             return list;
         }

@@ -8,7 +8,10 @@ public class Department {
     }
 
     public static long nextID = 1;
-
+    /**
+     * Генерирует уникальный id подразделения
+     * @return id
+     */
     public static long getNewId() {
         return nextID++;
     }

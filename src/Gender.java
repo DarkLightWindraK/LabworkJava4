@@ -1,8 +1,12 @@
-import javax.lang.model.element.UnknownElementException;
 
 public enum Gender {
     MALE, FEMALE;
-
+    /**
+     * Получает значение Gender по строковому представлению
+     * @param str строковое представление пола
+     * @return Gender
+     * @throws IllegalArgumentException если передана неверная строка
+     */
     public static Gender getGenderByString(String str) {
         return switch (str.trim().toLowerCase()) {
             case "male" -> MALE;
